@@ -1,0 +1,42 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.background img {
+    width: 1440px;
+    height: 806px;
+    flex-shrink: 0;
+    background-size: cover;       
+    background-position: center;   
+    background-repeat: no-repeat;
+}
+.weather-info{
+    position: absolute;
+    display: flex;
+    top: 60%;
+    color: aliceblue;
+    width: 100%;
+    padding-left: 116px;
+}
+#degree{
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 143px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -11.44px;
+}
+#City-name{
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 25px;
+    letter-spacing: 5px;
+}
