@@ -61,21 +61,28 @@ html, body{
     margin-top: 20px;
     margin-left: 10px;
 }
-.info-container{
+.info-container {
     box-sizing: border-box;
-    position:absolute;
+    position: absolute;
     top: 0;
     right: 0;
     display: flex;
     flex-direction: column;
-    width: 100vh;
-    height: max-content;
+    width: 80vh;
+    max-height: 100vh;
+    height: 700px;
     flex-shrink: 0;
     box-shadow: 0px 4px 10px rgba(79, 78, 78, 0.7);
-    border-left:  rgba(255, 255, 255, 0.14);
+    border-left: 1px solid rgba(255, 255, 255, 0.14);
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(9.5px);
     border-radius: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+}
+.info-container::-webkit-scrollbar {
+    width: 10px;
 }
 .input-search{
     width: 100%;
@@ -122,7 +129,7 @@ html, body{
     font-weight: 400;
     line-height: normal;
     display: flex;
-    margin-left: 33px;
+    margin-left: 50px;
 }
 #status{
     color: #FFF;
@@ -134,7 +141,7 @@ html, body{
     text-transform: uppercase;
     width: 354px;
     letter-spacing: 1px;
-    margin-left: 33px;
+    margin-left: 50px;
     display: flex;
 }
 .components{
@@ -142,16 +149,27 @@ html, body{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 30px;
+    gap: 15px;
 }
 .components div{
     display: inline-flex;
     justify-content: flex-start;
-    margin-left: 33px;
+    margin-left: 70px;
 }
 .components span{
     margin-top: 16px;
+    margin-left: 194px;
+    display: inline;
 }
 .components svg{
     margin-top: 10px;
+    margin-left: 10px;
+}
+.components p, span{
+    color: rgba(255, 255, 255, 0.60);
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
