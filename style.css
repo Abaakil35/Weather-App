@@ -225,3 +225,7 @@ html, body{
     font-weight: 400;
     line-height: normal;
 }
+#Country-name{
+    margin-left: 67px;
+    margin-bottom: 5px;
+}
