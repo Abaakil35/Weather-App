@@ -203,7 +203,7 @@ html, body{
     margin-left: 0;
     gap: 13px;
 }
-.first div, .second div {
+.first div {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
@@ -214,7 +214,7 @@ html, body{
     font-weight: 400;
     line-height: normal;
 }
-#temp-1, #temp-2{
+.temp-2{
     margin-left: 200px;
     margin-top: 5px;
     color: rgba(255, 255, 255, 0.70);
