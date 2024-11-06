@@ -56,11 +56,12 @@ html, body{
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    margin-top: 37px;
+    margin-top: 20px;
+    align-items: center;
 }
 #svg-current{
     margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 50px;
 }
 .info-container {
     box-sizing: border-box;
@@ -164,11 +165,12 @@ html, body{
     display: inline;
 }
 .components svg{
-    margin-top: 10px;
-    margin-left: 10px;
+    align-items: end;
+    margin-top: 16px;
+    margin-left: 20px;
 }
 .components p, span{
-    color: rgba(255, 255, 255, 0.60);
+    color: #FFF ;
     font-family: Roboto;
     font-size: 18px;
     font-style: normal;
@@ -226,6 +228,5 @@ html, body{
     line-height: normal;
 }
 #Country-name{
-    margin-left: 67px;
     margin-bottom: 5px;
 }

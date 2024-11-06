@@ -34,7 +34,7 @@ SearchButton.addEventListener('click', () => {
 });
 
 async function getWeatherData(city) {
-    try {
+    
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
         if (!response.ok) {
             throw new Error('City not found');
@@ -56,9 +56,7 @@ async function getWeatherData(city) {
 
         updateCurrentDate(data);
 
-    } catch (error) {
-        alert(error.message);
-    }
+    
 }
 
 async function getCountryName(countryCode) {
@@ -84,9 +82,9 @@ function updateCurrentWeatherUI(data) {
     Humidite.textContent = `${main.humidity}%`;
     WindSpeed.textContent = `${Math.round(wind.speed)} km/h`;
 
-    const now = new Date();
+    const cityTime = new Date((data.dt + data.timezone) * 1000);
     const options = { hour: '2-digit', minute: '2-digit', weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
-    DateTime.textContent = now.toLocaleString('en-US', options);
+    DateTime.textContent = cityTime.toLocaleString('en-US', options);
 }
 
 function updateForecastUI(forecastData) {
@@ -99,3 +97,6 @@ function updateForecastUI(forecastData) {
         }
     }
 }
+
+
+
