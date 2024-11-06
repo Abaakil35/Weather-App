@@ -230,3 +230,8 @@ html, body{
 #Country-name{
     margin-bottom: 5px;
 }
+.svg-status img{
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}

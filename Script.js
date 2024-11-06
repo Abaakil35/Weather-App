@@ -23,6 +23,12 @@ const statusDay = document.getElementsByClassName("status-2");
 const  tempDay = document.getElementsByClassName("temp-2");
 const apiKey = "63ecda3991a630514317f9d5dee95f84";
 
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("search-btn").click();
+    }
+});
+
 
 SearchButton.addEventListener('click', () => {
     const city = InputSearch.value;
@@ -98,5 +104,26 @@ function updateForecastUI(forecastData) {
     }
 }
 
+async function updateForecastUI(forecastData) {
+    for (let i = 0; i < 7; i++) {
+        if (i < forecastData.daily.length) {
+            const daily = forecastData.daily[i];
+            const date = new Date(daily.dt * 1000);
+            const formattedDate = `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}`;
 
+            const dayElement = document.getElementsByClassName('first')[i];
+            const dateSpan = dayElement.querySelector('.time-2');
+            dateSpan.textContent = formattedDate;
 
+            const statusSpan = dayElement.querySelector('.status-2');
+            statusSpan.textContent = daily.weather[0].description;
+
+            const tempSpan = dayElement.querySelector('.temp-2');
+            tempSpan.textContent = `${Math.round(daily.temp.day)}°`;
+
+            const weatherIcon = dayElement.querySelector('.svg-status img');
+            weatherIcon.src = `weather-stats/${daily.weather[0].icon}.svg`;
+            weatherIcon.alt = daily.weather[0].description;
+        }
+    }
+}
