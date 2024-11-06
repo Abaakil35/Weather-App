@@ -13,12 +13,13 @@ html, body{
     background-size: cover;       
     background-position: center;   
     background-repeat: no-repeat;
+    filter: blur(0.3px);
     position: sticky;
 }
 .weather-info{
     position: absolute;
     display: flex;
-    top: 60%;
+    top: 65%;
     color: aliceblue;
     width: 100%;
     padding-left: 116px;
@@ -40,7 +41,6 @@ html, body{
     font-weight: 400;
     line-height: normal;
     margin-left: 25px;
-    letter-spacing: 4px;
 }
 #current-datetime{
     color: #FFF;
@@ -99,7 +99,7 @@ html, body{
     appearance: none;
     background-color: transparent; 
     border: none;                 
-    outline: none;                             
+    outline: none;   
     font-size: 16px; 
     color: #FFF;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);;
