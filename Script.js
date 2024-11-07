@@ -86,7 +86,7 @@ function updateCurrentWeatherUI(data) {
     TempMax.textContent = `${Math.round(main.temp_max)}°`;
     TempMin.textContent = `${Math.round(main.temp_min)}°`;
     Humidite.textContent = `${main.humidity}%`;
-    WindSpeed.textContent = `${Math.round(wind.speed)} km/h`;
+    WindSpeed.textContent = `${Math.round(wind.speed)} m/s`;
 
     const cityTime = new Date((data.dt + data.timezone) * 1000);
     const options = { hour: '2-digit', minute: '2-digit', weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
@@ -100,30 +100,6 @@ function updateForecastUI(forecastData) {
             day[i].textContent = new Date(daily.dt * 1000).toLocaleDateString('en-US', { day: 'numeric', month: 'numeric' });
             statusDay[i].textContent = daily.weather[0].description;
             tempDay[i].textContent = `${Math.round(daily.temp.day)}°`;
-        }
-    }
-}
-
-async function updateForecastUI(forecastData) {
-    for (let i = 0; i < 7; i++) {
-        if (i < forecastData.daily.length) {
-            const daily = forecastData.daily[i];
-            const date = new Date(daily.dt * 1000);
-            const formattedDate = `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}`;
-
-            const dayElement = document.getElementsByClassName('first')[i];
-            const dateSpan = dayElement.querySelector('.time-2');
-            dateSpan.textContent = formattedDate;
-
-            const statusSpan = dayElement.querySelector('.status-2');
-            statusSpan.textContent = daily.weather[0].description;
-
-            const tempSpan = dayElement.querySelector('.temp-2');
-            tempSpan.textContent = `${Math.round(daily.temp.day)}°`;
-
-            const weatherIcon = dayElement.querySelector('.svg-status img');
-            weatherIcon.src = `weather-stats/${daily.weather[0].icon}.svg`;
-            weatherIcon.alt = daily.weather[0].description;
         }
     }
 }
